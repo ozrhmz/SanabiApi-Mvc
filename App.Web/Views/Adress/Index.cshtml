@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<AdressDto>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Adres Adı</th>
+            <th scope="col">İl</th>
+            <th scope="col">İlçe</th>
+            <th scope="col">Mahalle</th>
+            <th scope="col">Sokak</th>
+            <th scope="col">Apartman No</th>
+            <th scope="col">Posta Kodu</th>
+            <th scope="col">Kapı No</th>
+            <th scope="col">Adres Tarifi</th>
+            <th scope="col">Telefon No</th>
+            <th scope="col">Müşteri Id</th>
+            <th scope="col">Oluşturulma Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Province</td>
+                <td>@item.Districte</td>
+                <td>@item.Neighbourhood</td>
+                <td>@item.Street</td>
+                <td>@item.BuildingNo</td>
+                <td>@item.PostCode</td>
+                <td>@item.ApartmentNumber</td>
+                <td>@item.adressDetails</td>
+                <td>@item.numberPhone</td>
+                <td>@item.CustomerId</td>
+                <td>@item.CreateDate</td>
+                <td>
+                    <a class="btn btn-warning" asp-controller="Adress" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                    <a class="btn btn-danger" asp-controller="Adress" asp-action="Remove" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

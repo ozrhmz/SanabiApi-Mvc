@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model PaymentTypeDto
+<h1>Payment Type Update</h1>
+
+<div class="row">
+    <div class="coll-md-6">
+        <form asp-action="Update" method="post" asp-controller="PaymentType">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TypeName"></label>
+                <input asp-for="TypeName" class="form-control" />
+                <span asp-validation-for="TypeName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CreateDate"></label>
+                <input asp-for="CreateDate" class="form-control" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

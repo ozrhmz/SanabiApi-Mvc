@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<OrderStatusDto>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Durum İsim</th>
+            <th scope="col">Oluşturulma Tarihi</th>
+            <th scope="col">Aksiyon</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.StatusType</td>
+                <td>@item.CreateDate</td>
+                <td>
+                    <a class="btn btn-warning" asp-controller="OrderStatus" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                    <a class="btn btn-danger" asp-controller="OrderStatus" asp-action="Remove" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model OrderDto
+
+<form method="post" asp-controller="Order" asp-action="Update">
+    <input type="hidden" asp-for="Id" name="orderId"/>
+    <div class="form-group">
+        <label asp-for="OrderStatusId"></label>
+        <select asp-for="OrderStatusId" asp-items="ViewBag.status" class="form-control" name="statusId"></select>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn-primary" />
+    </div>
+</form>

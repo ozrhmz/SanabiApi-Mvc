@@ -1,0 +1,4 @@
+Api =>https://localhost:7263/
+Api =>http://localhost:5154/
+Web =>https://localhost:7187/
+Web =>http://localhost:5016/
